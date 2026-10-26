@@ -10,9 +10,9 @@
 
 <p align="center">
   <!-- TODO: replace PLACEHOLDER with the real store IDs once the listings are live -->
-  <a href="https://chromewebstore.google.com/detail/goldline/PLACEHOLDER"><b>Add to Chrome</b></a>
+  <a href="https://chromewebstore.google.com/detail/goldline/PLACEHOLDER"><b>Chrome Web Store</b></a>
   &nbsp;·&nbsp;
-  <a href="https://addons.mozilla.org/firefox/addon/PLACEHOLDER/"><b>Add to Firefox</b></a>
+  <a href="https://addons.mozilla.org/firefox/addon/PLACEHOLDER/"><b>Firefox Add-ons</b></a>
 </p>
 
 ## What it shows
@@ -25,11 +25,11 @@
 
 ## Install
 
-**From the stores:** use the Chrome or Firefox links above.
+**From the stores:** use the Chrome Web Store or Firefox Add-ons links above. The Chrome Web Store version also installs in other Chromium browsers such as Edge and Brave.
 
 **From source:**
 
-- **Chrome (or Edge, Brave):** open `chrome://extensions`, turn on Developer mode, choose **Load unpacked** and select the `extension/` folder.
+- **Chrome and other Chromium browsers:** open `chrome://extensions`, turn on Developer mode, choose **Load unpacked** and select the `extension/` folder.
 - **Firefox:** open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on** and select `extension/manifest.json`. Temporary add-ons are removed when Firefox closes. Firefox 140 or newer is required.
 
 ## Use
