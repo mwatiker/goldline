@@ -18,7 +18,7 @@ Install from the Chrome Web Store or Firefox Add-ons (links to come), or load it
 
 ## Build
 
-`./package.sh` writes `dist/goldline.zip` for store upload.
+`./package.sh` writes `dist/goldline-chrome.zip` and `dist/goldline-firefox.zip` for store upload. It needs `jq` and `zip`.
 
 ## License
 
