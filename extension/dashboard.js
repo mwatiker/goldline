@@ -8,6 +8,8 @@ const HEAL_ITEMS = [6610];
 const HEAL_CHAMPS = ["Soraka", "Aatrox", "Warwick", "Vladimir", "Swain", "DrMundo"];
 // Enemy healing shows once this many players have a source, and stays up until fewer than that for HEAL_HOLD seconds of game time.
 const HEAL_MIN = 2, HEAL_HEAVY = 3, HEAL_HOLD = 15;
+// Thousands separators only from five digits up: 4850 reads cleaner than 4,850, while 31,350 still needs one.
+const num = n => { const r = Math.round(n); return Math.abs(r) < 10000 ? String(r) : r.toLocaleString("en-US"); };
 
 // Item stats from Data Dragon, loaded once per game version: { itemID: {FlatMagicDamageMod, FlatPhysicalDamageMod, ...} }
 let itemStats = {}, itemInfo = {}, itemStatsVer = null;
@@ -156,7 +158,7 @@ function teamPower(players) {
   const n = players.length || 1, div = damageMode === "avg" ? n : 1;
   const arAvg = arRed / n, mrAvg = mrRed / n;
   const pp = items ? Math.round(100 * phys / (phys + magic)) : 50;
-  const fmt = v => Math.round(v / div).toLocaleString("en-US");
+  const fmt = v => num(v / div);
   return {
     items, pp, mp: 100 - pp, arAvg, mrAvg, hs,
     phys: fmt(phys), magic: fmt(magic), ar: fmt(ar), mr: fmt(mr),
@@ -230,7 +232,7 @@ function setImg(el, src) {
   el.removeAttribute("data-try"); el.style.visibility = "";
   el.setAttribute("src", src);
 }
-const signed = n => (n >= 0 ? "+" : "−") + Math.abs(n).toLocaleString("en-US");
+const signed = n => (n >= 0 ? "+" : "−") + num(Math.abs(n));
 
 const ROLES = ["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"];
 const ROLE_LABEL = {TOP: "TOP", JUNGLE: "JNG", MIDDLE: "MID", BOTTOM: "BOT", UTILITY: "SUP"};
@@ -309,7 +311,7 @@ function updateSide(s, p, aram) {
   const sc = p.scores;
   text(s.kda, `${sc.kills}/${sc.deaths}/${sc.assists}`);
   text(s.ratio, ((sc.kills + sc.assists) / Math.max(sc.deaths, 1)).toFixed(1) + " KDA");
-  html(s.egold, `<i class="coin"></i>${itemGold(p).toLocaleString("en-US")}`);
+  html(s.egold, `<i class="coin"></i>${num(itemGold(p))}`);
   text(s.cs, aram ? "" : sc.creepScore + " CS");
   // Slots 0-5; the trinket (slot 6) isn't shown. Items sit side by side with no gaps. The row runs outward to inward on both sides, so components come first and finished items last, nearest the middle; slot order within each group.
   const items = (p.items || []).filter(i => i.slot < 6).sort((a, b) => isBuilt(a) - isBuilt(b) || a.slot - b.slot);
@@ -374,7 +376,7 @@ function render(d) {
   const lead = youGold - enGold;
   const sideOf = (el, mine, label, gold) => {
     el.classList.toggle("mine", mine); el.classList.toggle("foe", !mine);
-    if (label !== undefined) { text(el.querySelector(".label"), label); text(el.querySelector(".gold span"), gold.toLocaleString("en-US")); }
+    if (label !== undefined) { text(el.querySelector(".label"), label); text(el.querySelector(".gold span"), num(gold)); }
   };
   sideOf($("teamL"), !flip, flip ? "ENEMY TEAM" : "YOUR TEAM", flip ? enGold : youGold);
   sideOf($("teamR"), flip, flip ? "YOUR TEAM" : "ENEMY TEAM", flip ? youGold : enGold);
