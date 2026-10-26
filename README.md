@@ -34,12 +34,12 @@
 
 ## Use
 
-1. Run the Goldline extension in your browser.
-2. Start a match. The dashboard shows **Waiting for a game** until the game is running, and the loading screen counts.
-3. **Setup:** the League client uses a security certificate your browser doesn't recognize. Open **Setup and connection help** on the waiting screen and follow the steps: open the link, click **Advanced**, then **Proceed to 127.0.0.1 (unsafe)**. The address points back to your own computer, so the connection stays local.
-4. Return to the dashboard tab. It connects on its own within a few seconds.
+1. Run the Goldline extension in your browser. A new tab opens with a **Waiting for a game** screen.
+2. Start a match. The loading screen counts.
+3. The first time, your browser will warn you about the League client's security certificate. Open **Setup and connection help** on the waiting screen and follow the steps: open the link, click **Advanced**, then **Proceed to 127.0.0.1 (unsafe)**. The address points back to your own computer, so the connection stays local.
+4. Return to the Goldline tab. It connects on its own within a few seconds and the live stats appear.
 
-If the tracker stops connecting later, repeat step 3.
+If Goldline stops connecting later, repeat step 3.
 
 ## Privacy
 
