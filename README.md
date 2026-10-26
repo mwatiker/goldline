@@ -1,27 +1,58 @@
-# Goldline - Live Stats for LoL
+<p align="center">
+  <img src="logo-h.svg" alt="Goldline logo" width="128" height="128">
+</p>
 
-A browser extension that shows live stats for your current League of Legends match: item gold, lane matchups, enemy damage and resistance, and healing.
+<h1 align="center">Goldline - Live Stats for LoL</h1>
 
-It reads match data from the League client's local Live Client Data API (`https://127.0.0.1:2999`) on your own machine, and public game data from Riot's Data Dragon. It has no accounts, analytics or tracking. See [PRIVACY.md](PRIVACY.md).
+<p align="center">
+  Live stats for your current League of Legends match, in a browser tab next to the game.
+</p>
+
+<p align="center">
+  <!-- TODO: replace PLACEHOLDER with the real store IDs once the listings are live -->
+  <a href="https://chromewebstore.google.com/detail/goldline/PLACEHOLDER"><b>Add to Chrome</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://addons.mozilla.org/firefox/addon/PLACEHOLDER/"><b>Add to Firefox</b></a>
+</p>
+
+## What it shows
+
+- **Item gold:** the total value of the items each side has bought, and the difference between the teams. Unspent gold isn't counted.
+- **Lane matchups:** each player lined up against their lane opponent.
+- **Enemy damage and resistance:** damage dealt, shown per player or as a team total, alongside armor and magic resist.
+- **Healing:** how much healing each side is getting.
+- **Summoner spell timers:** cooldown timers for each player's summoner spells.
 
 ## Install
 
-Install from the Chrome Web Store or Firefox Add-ons (links to come), or load it unpacked:
+**From the stores:** use the Chrome or Firefox links above.
 
-- **Chrome:** open `chrome://extensions`, enable Developer mode, choose "Load unpacked" and select the `extension/` folder.
-- **Firefox:** open `about:debugging#/runtime/this-firefox`, choose "Load Temporary Add-on" and select `extension/manifest.json`.
+**From source:**
+
+- **Chrome (or Edge, Brave):** open `chrome://extensions`, turn on Developer mode, choose **Load unpacked** and select the `extension/` folder.
+- **Firefox:** open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on** and select `extension/manifest.json`. Temporary add-ons are removed when Firefox closes. Firefox 140 or newer is required.
 
 ## Use
 
-1. Start a League of Legends match. The game client must be running.
-2. Click the Goldline toolbar icon to open the dashboard.
+1. Click the Goldline icon in your browser's toolbar. The dashboard opens in a new tab. The first time, Firefox asks for permission to read the game's data. Allow it.
+2. Start a match. The dashboard shows **Waiting for a game** until the game is running, and the loading screen counts.
+3. **Setup:** the League client uses a security certificate your browser doesn't recognize. Open **Setup and connection help** on the waiting screen and follow the steps: open the link, click **Advanced**, then **Proceed to 127.0.0.1 (unsafe)**. The address points back to your own computer, so the connection stays local.
+4. Return to the dashboard tab. It connects on its own within a few seconds.
+
+If the tracker stops connecting later, repeat step 3.
+
+## Privacy
+
+Goldline has no accounts, analytics or tracking, and it sends nothing to the developer. It reads match data from the game client on your own computer (`https://127.0.0.1:2999`) and downloads public game data and images from Riot's Data Dragon (`ddragon.leagueoflegends.com`). Full details are in [PRIVACY.md](PRIVACY.md).
 
 ## Build
 
-`./package.sh` writes `dist/goldline-chrome.zip` and `dist/goldline-firefox.zip` for store upload. It needs `jq` and `zip`.
+`./package.sh` writes `dist/goldline-chrome.zip` and `dist/goldline-firefox.zip` for store upload. The two builds differ only in their manifest. It needs `jq` and `zip`.
 
 ## License
 
 MIT, see [LICENSE](LICENSE). Third-party notices are in [THIRD_PARTY.md](THIRD_PARTY.md).
+
+---
 
 Goldline - Live Stats for LoL isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
