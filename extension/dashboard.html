@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goldline - Live Stats for LoL</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<main>
+  <div id="waiting">
+    <img class="spinner" src="img/logo.svg" alt="" width="46" height="46">
+    <h1>Waiting for a game</h1>
+    <details class="help" id="help">
+      <summary>Setup and connection help</summary>
+      <ol>
+        <li>Start a match (the loading screen is fine).</li>
+        <li><a href="https://127.0.0.1:2999/liveclientdata/gamestats#tracker" target="_blank" rel="noopener">Open this link</a>.
+            Your browser will say the connection isn't private.</li>
+        <li>Click <b>Advanced</b>, then <b>Proceed to 127.0.0.1 (unsafe)</b>.</li>
+        <li>Come back to this tab. It connects on its own within a few seconds.</li>
+      </ol>
+      <p class="tip">If the link says the page can't be reached, the game hasn't started loading yet. Try again once it has. If the tracker stops connecting later, repeat these steps.</p>
+      <details class="why">
+        <summary>Why do I have to do this?</summary>
+        <p>Your browser doesn’t recognize the security certificate used by the League of Legends client, so it displays a warning.</p>
+        <p>The address 127.0.0.1 points back to your own computer, so the connection stays local.</p>
+      </details>
+    </details>
+    <p class="legal">Goldline - Live Stats for LoL isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+  </div>
+  <div id="game" hidden>
+    <div class="top">
+      <div class="team left" id="teamL"><div class="label"></div><div class="gold" title="Item gold: total value of items bought. Unspent gold isn't counted."><i class="coin"></i><span>0</span></div></div>
+      <div class="lead"><div class="big" id="lead">0</div><div class="label" title="Total value of items bought. Unspent gold isn't counted.">ITEM GOLD DIFFERENCE</div></div>
+      <div class="team right" id="teamR"><div class="label"></div><div class="gold" title="Item gold: total value of items bought. Unspent gold isn't counted."><i class="coin"></i><span>0</span></div></div>
+    </div>
+    <div id="lanes"></div>
+    <div id="insight" hidden></div>
+    <div class="sums">
+      <div class="sum" id="sumL"></div>
+      <div class="togwrap"><button class="tog" id="tog" type="button" title="Show damage and resistance per player or as a team total">
+        <span class="chev">&#8249;</span><span class="mode"></span><span class="chev">&#8250;</span>
+      </button></div>
+      <div class="sum" id="sumR"></div>
+    </div>
+  </div>
+</main>
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Goldline - Live Stats for LoL",
+  "version": "0.1.0",
+  "description": "Live stats for League of Legends matches: item gold, lane matchups, enemy damage and resistance, and healing.",
+  "host_permissions": [
+    "https://127.0.0.1/*",
+    "https://ddragon.leagueoflegends.com/*"
+  ],
+  "action": {
+    "default_title": "Open Goldline - Live Stats for LoL",
+    "default_icon": {
+      "16": "img/icon-16.png",
+      "32": "img/icon-32.png",
+      "48": "img/icon-48.png",
+      "128": "img/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://127.0.0.1/liveclientdata/gamestats"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "live-tracker@mwatiker.github.io",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "icons": {
+    "16": "img/icon-16.png",
+    "32": "img/icon-32.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  }
+}
