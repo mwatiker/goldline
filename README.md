@@ -13,6 +13,8 @@
   <a href="https://chromewebstore.google.com/detail/goldline/PLACEHOLDER"><b>Chrome Web Store</b></a>
   &nbsp;·&nbsp;
   <a href="https://addons.mozilla.org/firefox/addon/PLACEHOLDER/"><b>Firefox Add-ons</b></a>
+  <br>
+  <sub>Chrome Web Store: also Edge, Brave, Opera</sub>
 </p>
 
 ## What it shows
