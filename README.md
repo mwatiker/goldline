@@ -34,7 +34,7 @@
 
 ## Use
 
-1. Click the Goldline icon in your browser's toolbar. The dashboard opens in a new tab. The first time, Firefox asks for permission to read the game's data. Allow it.
+1. Run the Goldline extension in your browser.
 2. Start a match. The dashboard shows **Waiting for a game** until the game is running, and the loading screen counts.
 3. **Setup:** the League client uses a security certificate your browser doesn't recognize. Open **Setup and connection help** on the waiting screen and follow the steps: open the link, click **Advanced**, then **Proceed to 127.0.0.1 (unsafe)**. The address points back to your own computer, so the connection stays local.
 4. Return to the dashboard tab. It connects on its own within a few seconds.
