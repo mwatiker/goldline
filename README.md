@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo-h.svg" alt="Goldline logo" width="128" height="128">
+  <img src="logo-h-transparent.svg" alt="Goldline logo" width="128" height="128">
 </p>
 
 <h1 align="center">Goldline - Live Stats for LoL</h1>
