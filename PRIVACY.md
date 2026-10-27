@@ -1,6 +1,6 @@
 ---
 layout: policy
-permalink: /PRIVACY.html
+permalink: /privacy/
 title: Goldline privacy policy
 ---
 
