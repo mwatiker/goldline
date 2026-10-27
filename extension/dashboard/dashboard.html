@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Goldline - Live Stats for LoL</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Shown until the game client answers. -->
+      <div id="waiting">
+        <img class="brand" src="../assets/img/wordmark.svg" alt="Goldline" height="28" />
+        <h1>
+          Waiting for a game<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
+        </h1>
+        <details class="help" id="help">
+          <summary>Setup and connection help</summary>
+          <ol>
+            <li>Start a match (the loading screen is fine).</li>
+            <li>
+              <a href="https://127.0.0.1:2999/liveclientdata/gamestats#setup" target="_blank" rel="noopener"
+                >Open this link</a
+              >. Your browser will say the connection isn't private.
+            </li>
+            <li>Click <b>Advanced</b>, then <b>Proceed to 127.0.0.1 (unsafe)</b>.</li>
+            <li>Come back to this tab. It connects on its own within a few seconds.</li>
+          </ol>
+          <p class="tip">
+            <b>Tip:</b> If the link says the page can't be reached, the game hasn't started loading yet. Try again once
+            it has. If Goldline stops connecting later, repeat these steps.
+          </p>
+          <details class="why">
+            <summary>Why do I have to do this?</summary>
+            <p>
+              Goldline reads your match data from the League of Legends client on your computer (127.0.0.1). Your
+              browser doesn’t recognize its certificate, so it shows a warning.
+            </p>
+            <p>Goldline has no accounts or tracking and sends nothing to the developer.</p>
+          </details>
+        </details>
+        <p class="legal">
+          Goldline - Live Stats for LoL isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot
+          Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all
+          associated properties are trademarks or registered trademarks of Riot Games, Inc.
+          <a href="https://github.com/mwatiker/goldline" target="_blank" rel="noopener">View on GitHub</a>
+        </p>
+      </div>
+
+      <!-- Live view, filled in by main.js. -->
+      <div id="game" hidden>
+        <div class="top">
+          <div class="team left" id="teamL">
+            <div class="label"></div>
+            <div class="gold" title="Item gold: total value of items bought. Unspent gold isn't counted.">
+              <i class="coin"></i><span>0</span>
+            </div>
+          </div>
+          <div class="lead">
+            <div class="big" id="lead">0</div>
+            <div class="label" title="Total value of items bought. Unspent gold isn't counted.">
+              ITEM GOLD DIFFERENCE
+            </div>
+          </div>
+          <div class="team right" id="teamR">
+            <div class="label"></div>
+            <div class="gold" title="Item gold: total value of items bought. Unspent gold isn't counted.">
+              <i class="coin"></i><span>0</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="lanes"></div>
+        <div id="insight" hidden></div>
+
+        <div class="sums">
+          <div class="sum" id="sumL"></div>
+          <div class="togwrap">
+            <button
+              class="tog"
+              id="tog"
+              type="button"
+              title="Show damage and resistance per player or as a team total"
+            >
+              <span class="chev">&#8249;</span><span class="mode"></span><span class="chev">&#8250;</span>
+            </button>
+          </div>
+          <div class="sum" id="sumR"></div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

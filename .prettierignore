@@ -1,0 +1,8 @@
+dist/
+node_modules/
+package-lock.json
+
+# Markup and docs are written by hand
+*.html
+*.md
+*.svg

@@ -3,33 +3,24 @@
   "name": "Goldline - Live Stats for LoL",
   "version": "0.1.0",
   "description": "Live stats for League of Legends matches: item gold, lane matchups, enemy damage and resistance, and healing.",
-  "host_permissions": [
-    "https://127.0.0.1/*",
-    "https://ddragon.leagueoflegends.com/*"
-  ],
+  "host_permissions": ["https://127.0.0.1/*", "https://ddragon.leagueoflegends.com/*"],
   "action": {
     "default_title": "Open Goldline - Live Stats for LoL",
     "default_icon": {
-      "16": "img/icon-16.png",
-      "32": "img/icon-32.png",
-      "48": "img/icon-48.png",
-      "128": "img/icon-128.png"
+      "16": "assets/img/icon-16.png",
+      "32": "assets/img/icon-32.png",
+      "48": "assets/img/icon-48.png",
+      "128": "assets/img/icon-128.png"
     }
   },
   "background": {
     "service_worker": "background.js",
-    "scripts": [
-      "background.js"
-    ]
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://127.0.0.1/liveclientdata/gamestats"
-      ],
-      "js": [
-        "content.js"
-      ],
+      "matches": ["https://127.0.0.1/liveclientdata/gamestats"],
+      "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],
@@ -38,16 +29,14 @@
       "id": "live-tracker@mwatiker.github.io",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "required": [
-          "none"
-        ]
+        "required": ["none"]
       }
     }
   },
   "icons": {
-    "16": "img/icon-16.png",
-    "32": "img/icon-32.png",
-    "48": "img/icon-48.png",
-    "128": "img/icon-128.png"
+    "16": "assets/img/icon-16.png",
+    "32": "assets/img/icon-32.png",
+    "48": "assets/img/icon-48.png",
+    "128": "assets/img/icon-128.png"
   }
 }

@@ -3,7 +3,7 @@
 # The source manifest keeps both background forms and the Firefox id so it loads unpacked anywhere;
 # each build keeps only what its store wants.
 set -e
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 rm -rf dist && mkdir -p dist
 for target in chrome firefox; do
   dir="dist/pkg-$target"

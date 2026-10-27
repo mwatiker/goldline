@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo-h.svg" alt="Goldline logo" width="128" height="128">
+  <img src="docs/logo.svg" alt="Goldline logo" width="128" height="128">
 </p>
 
 <h1 align="center">Goldline - Live Stats for LoL</h1>
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="screenshots/dashboard.png" alt="Goldline dashboard showing item gold, lane matchups, enemy healing, and damage and resistance for both teams" width="900">
+  <img src="docs/screenshots/dashboard.png" alt="Goldline dashboard showing item gold, lane matchups, enemy healing, and damage and resistance for both teams" width="900">
 </p>
 
 ## What it shows
@@ -57,7 +57,17 @@ Goldline has no accounts, analytics or tracking, and it sends nothing to the dev
 
 ## Build
 
-`./package.sh` writes `dist/goldline-chrome.zip` and `dist/goldline-firefox.zip` for store upload. The two builds differ only in their manifest. It needs `jq` and `zip`.
+`./scripts/package.sh` writes `dist/goldline-chrome.zip` and `dist/goldline-firefox.zip` for store upload. The two builds differ only in their manifest. It needs `jq` and `zip`.
+
+## Development
+
+The extension has no build step: `extension/` is loaded as it is (see [Install](#install)). The dashboard is plain ES modules under `extension/dashboard/`.
+
+```sh
+npm install        # linting and formatting tools
+npm run lint       # ESLint
+npm run format     # Prettier
+```
 
 ## License
 

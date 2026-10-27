@@ -1,0 +1,24 @@
+{
+  "name": "goldline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Live stats for League of Legends matches, in a browser tab next to the game.",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "package": "./scripts/package.sh"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwatiker/goldline.git"
+  },
+  "license": "MIT"
+}
