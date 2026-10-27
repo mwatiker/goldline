@@ -309,7 +309,7 @@ function updateSide(s, p, aram) {
     setImg(s.spells[i], `${CDN}/cdn/${ver}/img/spell/${k}.png`);
   });
   const sc = p.scores;
-  text(s.kda, `${sc.kills}/${sc.deaths}/${sc.assists}`);
+  html(s.kda, `${sc.kills}<i>/</i>${sc.deaths}<i>/</i>${sc.assists}`);
   text(s.ratio, ((sc.kills + sc.assists) / Math.max(sc.deaths, 1)).toFixed(1) + " KDA");
   html(s.egold, `<i class="coin"></i>${num(itemGold(p))}`);
   text(s.cs, aram ? "" : sc.creepScore + " CS");
@@ -403,7 +403,7 @@ function render(d) {
       l.midD.className = "d " + (diff >= 0 ? "good" : "bad");
       // Edge line on the box's inner edge, on the side that is ahead, in that team's colour.
       const leftAhead = diff > 0 !== flip;
-      l.mid.className = "mid" + (diffShown ? "" : " nodiff") + (diff === 0 ? "" : (leftAhead ? " lead-l" : " lead-r") + (diff > 0 ? " mine" : " foe"));
+      l.mid.className = "mid" + (diffShown ? "" : " nodiff") + (!diffShown || diff === 0 ? "" : (leftAhead ? " lead-l" : " lead-r") + (diff > 0 ? " mine" : " foe"));
       text(l.midR, ROLE_LABEL[y.position]);
     } else if (scale > 0) {
       const above = p => p ? fillCurve((itemGold(p) - avg) / (scale * FULL_ABOVE_AVG)) : 0;
