@@ -296,6 +296,9 @@ function updateSide(s, p, aram) {
   s.champ.dataset.tip = "champ:" + key; s.champ.dataset.name = p.championName;
   setImg(s.splash, `${CDN}/cdn/img/champion/splash/${key}_0.jpg`);
   text(s.name, p.championName);
+  // The name shrinks to fit its longest word (see .cname), since a single long word like "Fiddlesticks" can't wrap.
+  const n = Math.max(...p.championName.split(/\s+/).map(w => w.length));
+  if (s.name._n !== n) { s.name._n = n; s.name.style.setProperty("--n", n); }
   text(s.lvl, String(p.level));
   s.pid = p.riotId || p.summonerName;
   [p.summonerSpells.summonerSpellOne, p.summonerSpells.summonerSpellTwo].forEach((sp, i) => {
