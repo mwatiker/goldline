@@ -29,12 +29,6 @@
 - **Healing:** how much healing each side is getting.
 - **Summoner spell timers:** cooldown timers for each player's summoner spells.
 
-Damage and resistance can be switched between per-player averages and team totals:
-
-<p align="center">
-  <img src="screenshots/team-totals.png" alt="Goldline dashboard with damage and resistance switched to team totals" width="900">
-</p>
-
 ## Install
 
 **From the stores:** use the Chrome Web Store or Firefox Add-ons links above. The Chrome Web Store version also installs in other Chromium browsers such as Edge and Brave.
