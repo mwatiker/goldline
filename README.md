@@ -2,7 +2,7 @@
   <img src="docs/logo.svg" alt="Goldline logo" width="128" height="128">
 </p>
 
-<h1 align="center">Goldline - Live Stats for LoL</h1>
+<h1 align="center">Goldline - Live Stats for League of Legends</h1>
 
 <p align="center">
   Live stats for your current League of Legends match, in a browser tab next to the game.
@@ -75,4 +75,4 @@ MIT, see [LICENSE](LICENSE). Third-party notices are in [THIRD_PARTY.md](THIRD_P
 
 ---
 
-Goldline - Live Stats for LoL isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+Goldline - Live Stats for League of Legends isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.

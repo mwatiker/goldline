@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Goldline - Live Stats for LoL",
+  "name": "Goldline - Live Stats for League of Legends",
   "version": "0.1.0",
   "description": "Live stats for League of Legends matches: item gold, lane matchups, enemy damage and resistance, and healing.",
   "host_permissions": ["https://127.0.0.1/*", "https://ddragon.leagueoflegends.com/*"],
   "action": {
-    "default_title": "Open Goldline - Live Stats for LoL",
+    "default_title": "Open Goldline - Live Stats for League of Legends",
     "default_icon": {
       "16": "assets/img/icon-16.png",
       "32": "assets/img/icon-32.png",

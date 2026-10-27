@@ -9,7 +9,8 @@ import {num} from "./util.js";
 // Per-level stat growth is not linear: stat = base + perLevel * (n * (0.7025 + 0.0175 * n)) for n = level - 1.
 const growth = n => n * (0.7025 + 0.0175 * n);
 
-// Estimated bonus AD (items), base AD (champion + level) and AP from items, plus total AR and MR.
+// Estimated bonus AD (items), base AD (champion + level) and AP from items, plus bonus AR and MR (items) and base AR and MR
+// (champion + level).
 export function itemPower(items, champ, level) {
   let ad = 0;
   let ap = 0;
@@ -34,8 +35,10 @@ export function itemPower(items, champ, level) {
     ad: Math.round(ad),
     baseAd: Math.round(baseAd),
     ap: Math.round(ap),
-    ar: Math.round((base.armor || 0) + (base.armorperlevel || 0) * g + ar),
-    mr: Math.round((base.spellblock || 0) + (base.spellblockperlevel || 0) * g + mr),
+    ar: Math.round(ar),
+    mr: Math.round(mr),
+    baseAr: Math.round((base.armor || 0) + (base.armorperlevel || 0) * g),
+    baseMr: Math.round((base.spellblock || 0) + (base.spellblockperlevel || 0) * g),
     hs: heartsteels,
   };
 }
@@ -44,7 +47,7 @@ export function itemPower(items, champ, level) {
 export const reduction = resist => (resist >= 0 ? resist / (100 + resist) : 1 - (2 - 100 / (100 - resist)));
 
 // Team damage mix and resists. Physical = each player's bonus AD from items (inherent base AD excluded), magic = their AP;
-// 1 AD is treated as equal to 1 AP. The % blocked is the average of each player's damage reduction, before penetration.
+// armor and MR likewise count only the bonus from items. 1 AD is treated as equal to 1 AP. The % blocked is the average of each player's damage reduction, before penetration.
 // With mode "avg" the figures are per player, otherwise team totals.
 export function teamPower(players, mode) {
   let phys = 0;
