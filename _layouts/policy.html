@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ page.title }}</title>
+<style>
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 500 800; font-display: swap; src: url({{ '/extension/assets/fonts/bricolage.woff2' | relative_url }}) format("woff2"); }
+@font-face { font-family: "Archivo"; font-weight: 400 700; font-display: swap; src: url({{ '/extension/assets/fonts/archivo.woff2' | relative_url }}) format("woff2"); }
+:root { --bg: #0b1411; --text: #e8e2d2; --dim: #aab8b0; --line: #37483f; --gold: #e8c76a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.65 "Archivo", system-ui, sans-serif; }
+header { padding: 18px 22px; }
+header img { display: block; height: 28px; width: auto; }
+main { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+h1, h2 { font-family: "Bricolage Grotesque", "Archivo", sans-serif; letter-spacing: -0.02em; line-height: 1.15; }
+h1 { font-size: 32px; font-weight: 700; margin: 0 0 8px; }
+h2 { font-size: 22px; font-weight: 700; margin: 40px 0 12px; }
+a { color: var(--gold); }
+code { background: #0f1a16; border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; font-size: 0.9em; }
+li { margin: 6px 0; }
+strong { color: #fff; }
+p { color: var(--text); }
+</style>
+</head>
+<body>
+<header><a href="{{ '/' | relative_url }}"><img src="{{ '/extension/assets/img/wordmark.svg' | relative_url }}" alt="Goldline" /></a></header>
+<main>
+{{ content }}
+</main>
+</body>
+</html>

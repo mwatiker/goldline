@@ -1,8 +1,14 @@
-# Goldline - Live Stats for LoL privacy policy
+---
+layout: policy
+permalink: /PRIVACY.html
+title: Goldline privacy policy
+---
+
+# Goldline - Live Stats for League of Legends privacy policy
 
 Last updated: 2026-10-26
 
-Goldline - Live Stats for LoL is a browser extension that shows live information about your current League of Legends match. It does not collect, store or transmit personal data to the developer or to any third party analytics or advertising service.
+Goldline - Live Stats for League of Legends is a browser extension that shows live information about your current League of Legends match. It does not collect, store or transmit personal data to the developer or to any third party analytics or advertising service.
 
 ## What the extension reads
 
@@ -26,7 +32,7 @@ Two small preferences are saved in your browser's local storage: whether damage 
 
 ## Disclaimer
 
-Goldline - Live Stats for LoL isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+Goldline - Live Stats for League of Legends isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
 
 ## Changes
 
