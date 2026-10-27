@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="screenshots/dashboard.png" alt="Goldline dashboard showing item gold, lane matchups, and damage and resistance for both teams" width="900">
+  <img src="screenshots/dashboard.png" alt="Goldline dashboard showing item gold, lane matchups, enemy healing, and damage and resistance for both teams" width="900">
 </p>
 
 ## What it shows
