@@ -17,13 +17,23 @@
   <sub>Chrome Web Store: also Edge, Brave, Opera</sub>
 </p>
 
+<p align="center">
+  <img src="screenshots/dashboard.png" alt="Goldline dashboard showing item gold, lane matchups, and damage and resistance for both teams" width="900">
+</p>
+
 ## What it shows
 
 - **Item gold:** the total value of the items each side has bought, and the difference between the teams. Unspent gold isn't counted.
-- **Lane matchups:** each player lined up against their lane opponent.
+- **Lane matchups:** each player lined up against their lane opponent, with KDA, CS, items and summoner spells.
 - **Enemy damage and resistance:** damage dealt, shown per player or as a team total, alongside armor and magic resist.
 - **Healing:** how much healing each side is getting.
 - **Summoner spell timers:** cooldown timers for each player's summoner spells.
+
+Damage and resistance can be switched between per-player averages and team totals:
+
+<p align="center">
+  <img src="screenshots/team-totals.png" alt="Goldline dashboard with damage and resistance switched to team totals" width="900">
+</p>
 
 ## Install
 
@@ -36,12 +46,16 @@
 
 ## Use
 
-1. Run the Goldline extension in your browser. A new tab opens with a **Waiting for a game** screen.
+1. Click the Goldline icon in your browser. A new tab opens with a **Waiting for a game** screen.
 2. Start a match. The loading screen counts.
-3. The first time, your browser will warn you about the League client's security certificate. Open **Setup and connection help** on the waiting screen and follow the steps: open the link, click **Advanced**, then **Proceed to 127.0.0.1 (unsafe)**. The address points back to your own computer, so the connection stays local.
+3. The first time, your browser will warn you that the connection isn't private. Open **Setup and connection help** on the waiting screen and follow the steps: open the link, click **Advanced**, then **Proceed to 127.0.0.1 (unsafe)**.
 4. Return to the Goldline tab. It connects on its own within a few seconds and the live stats appear.
 
 If Goldline stops connecting later, repeat step 3.
+
+### Why the browser warning?
+
+Goldline reads your match data from the League of Legends client, which serves it from your own computer at `127.0.0.1` while you play. The client uses a certificate your browser doesn't recognize, so it shows a warning. Accepting it once lets Goldline connect. It only applies to that local address.
 
 ## Privacy
 
