@@ -47,8 +47,9 @@ export function itemPower(items, champ, level) {
 export const reduction = resist => (resist >= 0 ? resist / (100 + resist) : 1 - (2 - 100 / (100 - resist)));
 
 // Team damage mix and resists. Physical = each player's bonus AD from items (inherent base AD excluded), magic = their AP;
-// armor and MR likewise count only the bonus from items. 1 AD is treated as equal to 1 AP. The % blocked is the average of each player's damage reduction, before penetration.
-// With mode "avg" the figures are per player, otherwise team totals.
+// 1 AD is treated as equal to 1 AP. Armor and MR are totals (champion base + items). The % blocked is the average of each
+// player's damage reduction from their total resist, before penetration. With mode "avg" the figures are per player,
+// otherwise team totals.
 export function teamPower(players, mode) {
   let phys = 0;
   let magic = 0;
@@ -59,13 +60,15 @@ export function teamPower(players, mode) {
   let heartsteels = 0;
   for (const p of players) {
     const power = itemPower(p.items || [], champKey(p), p.level);
+    const totalAr = power.baseAr + power.ar;
+    const totalMr = power.baseMr + power.mr;
     phys += power.ad;
     magic += power.ap;
-    ar += power.ar;
-    mr += power.mr;
+    ar += totalAr;
+    mr += totalMr;
     heartsteels += power.hs;
-    arBlocked += reduction(power.ar);
-    mrBlocked += reduction(power.mr);
+    arBlocked += reduction(totalAr);
+    mrBlocked += reduction(totalMr);
   }
   const count = players.length || 1;
   const divisor = mode === "avg" ? count : 1;
